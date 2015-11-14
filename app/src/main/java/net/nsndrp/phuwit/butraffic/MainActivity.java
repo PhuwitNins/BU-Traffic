@@ -1,6 +1,8 @@
 package net.nsndrp.phuwit.butraffic;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,7 +44,10 @@ public class MainActivity extends AppCompatActivity {
                 MediaPlayer buttonPlayer = MediaPlayer.create(getBaseContext(),R.raw.dog);
                 buttonPlayer.start();
 
-                // Inten
+                // Intent to web
+                Intent objIntent = new Intent(Intent.ACTION_VIEW);
+                objIntent.setData(Uri.parse("http://www.nsndrp.net"));
+                startActivity(objIntent);
 
             } // Event
         });
