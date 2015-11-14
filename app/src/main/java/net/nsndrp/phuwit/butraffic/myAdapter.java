@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 public class myAdapter extends BaseAdapter{
 
 
-    /* Explicit */
+    /* Explicit  */
     private Context objContext;
     private String[] titleStrings;
     private int[] iconInts;
