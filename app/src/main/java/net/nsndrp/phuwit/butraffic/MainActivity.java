@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button aboutmeButton;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     } // Main method
+public void clickExercise(View view){
+    startActivity(new Intent(MainActivity.this, excercise.class));
+
+
+
+}
+
+
 
     private void createListview() {
 
