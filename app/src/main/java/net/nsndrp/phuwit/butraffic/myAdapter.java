@@ -52,6 +52,7 @@ public class myAdapter extends BaseAdapter{
         ImageView iconImageView = (ImageView) objView.findViewById(R.id.imageView);
         iconImageView.setImageResource(iconInts[position]);
 
+
         return objView;
     }
 }   // Main Class
