@@ -3,6 +3,7 @@ package net.nsndrp.phuwit.butraffic;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+//import android.support.v4.widget.SearchViewCompatIcs;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,18 +31,56 @@ public class MainActivity extends AppCompatActivity {
         buttonController();
 
 
+        /* Create List view*/
 
-
+        createListview();
 
 
     } // Main method
+
+    private void createListview() {
+
+        //setup array
+        String[] strTitle = new String[20];
+        strTitle[0] = "ห้ามเลี้ยวซ้าย";
+        strTitle[1] = "ห้ามเลี้ยวขวา";
+        strTitle[2] = "ตรงไป";
+        strTitle[3] = "เลี้ยวขวา";
+        strTitle[4] = "เลี้ยวซ้าย";
+        strTitle[5] = "ทางออก";
+        strTitle[6] = "ทางเข้า";
+        strTitle[7] = "ห้ามเข้า";
+        strTitle[8] = "หยุด";
+        strTitle[9] = "จำกัดความสูง";
+        strTitle[10] = "แยก";
+        strTitle[11] = "ห้ามกลับรถ";
+        strTitle[12] = "ห้ามจอด";
+        strTitle[13] = "รถสวน";
+        strTitle[14] = "ห้ามแซง";
+        strTitle[15] = "ห้ามเข้า";
+        strTitle[16] = "หยุดตรวจ";
+        strTitle[17] = "จำกัดความเร็ว";
+        strTitle[18] = "จำกัดความกว้าง";
+        strTitle[19] = "จำกัดความสูง";
+
+        int[] intIcon = {R.drawable.traffic_01, R.drawable.traffic_02, R.drawable.traffic_03,
+                R.drawable.traffic_04, R.drawable.traffic_05, R.drawable.traffic_06,
+                R.drawable.traffic_07, R.drawable.traffic_08, R.drawable.traffic_09,
+                R.drawable.traffic_10, R.drawable.traffic_11, R.drawable.traffic_12,
+                R.drawable.traffic_13, R.drawable.traffic_14, R.drawable.traffic_15,
+                R.drawable.traffic_16, R.drawable.traffic_17, R.drawable.traffic_18,
+                R.drawable.traffic_19, R.drawable.traffic_20};
+
+        myAdapter objMyAdapter = new myAdapter(MainActivity.this, strTitle, intIcon);
+        trafficListView.setAdapter(objMyAdapter);
+    }// CreateListView
 
     private void buttonController() {
         aboutmeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Sound Effect
-                MediaPlayer buttonPlayer = MediaPlayer.create(getBaseContext(),R.raw.dog);
+                MediaPlayer buttonPlayer = MediaPlayer.create(getBaseContext(), R.raw.dog);
                 buttonPlayer.start();
 
                 // Intent to web
